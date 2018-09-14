@@ -33,6 +33,15 @@ public class ExamUnitTest {
         assertTest2(testExam, 89, 2, 70, 19, 11);
     }
 
+    @Test
+    public void test3(){
+        TestExam testExam = new TestExam();
+        assertArrayEquals(testExam.test3(new int[]{1,2,0,0,0,1,1,1,2}),new int[]{0,0,0,1,1,1,1,2,2});
+        assertArrayEquals(testExam.test3(new int[]{1,2,0,0,0,1,1,1,2,2}),new int[]{0,0,0,1,1,1,1,2,2,2});
+        assertArrayEquals(testExam.test3(new int[]{1,2,0,0,1,0,0,1,1,1,2}),new int[]{0,0,0,0,1,1,1,1,1,2,2});
+        assertArrayEquals(testExam.test3(new int[]{2,0,1}),new int[]{0,1,2});
+    }
+
     private void assertTest2(TestExam testExam, int target, int... inputs) {
         int[] result = testExam.test2(target, inputs);
         int targetVerify = 0;
